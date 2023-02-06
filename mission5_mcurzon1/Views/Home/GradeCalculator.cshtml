@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Grade Calculator";
+}
+@model GradeCalculatorModel;
+
+<form method="post">
+    <h1 class="text-center">Grade Calculator</h1> <br />
+    <div class="row">
+        <div class="col">
+            <label  for="assignment">Assignments</label>
+            <input class="form-control-sm" asp-for="Assignment" id="assignment" /> <br />
+            <label for="project">Group Project</label>
+            <input class="form-control-sm" asp-for="Project" id="project" /> <br />
+        </div>
+        <div class="col">
+            <label class="col-form-label" for="quiz">Quizzes</label>
+            <input class="form-control-sm" asp-for="Quiz" id="quiz" /> <br />
+            <label class="col-form-label" for="midterm">Midterm</label>
+            <input class="form-control-sm" asp-for="Midterm" id="midterm" /> <br />
+        </div>
+        <div class="col">
+            <label class="col-form-label" for="final">Final Exam</label>
+            <input class="form-control-sm" asp-for="Final" id="final" /> <br />
+            <label class="col-form-label" for="intex">INTEX</label>
+            <input class="form-control-sm" asp-for="Intex" id="intex" /> <br />
+        </div>
+    </div>
+    <div>
+        <br />
+    </div>
+    <input class="btn btn-primary" id="submit" onclick="alertGrade()" type="submit" value="Submit" />
+    <br /> <br />
+</form>
+<div asp-validation-summary="All"></div>
+<div class="container">
+    <b><h2 id="finalGrade"></h2></b>
+</div>
